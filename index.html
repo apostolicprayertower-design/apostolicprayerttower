@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apostolic Prayer Tower - Hyderabad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Apostolic Prayer Tower</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
-      --primary: #1e3a8a;
-      --primary-dark: #0f172a;
-      --accent: #d97706;
-      --accent-light: #fef3c7;
-      --text: #334155;
-      --light-bg: #f8fafc;
-      --white: #ffffff;
-      --whatsapp: #25d366;
-      --live-red: #dc2626;
+      --bg-white: #ffffff;
+      --bg-bright-gray: #f8fafc;
+      --bg-card-hover: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --primary-navy: #0284c7;
+      --navy-dark: #0f172a;
+      --primary-gold: #d97706;
+      --gold-light: #fef3c7;
+      --whatsapp-green: #25d366;
+      --facebook-blue: #1877f2;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      --card-radius: 16px;
     }
 
     * {
@@ -24,707 +35,784 @@
       padding: 0;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      line-height: 1.7;
-      background-color: var(--light-bg);
+    html {
+      scroll-behavior: smooth;
     }
 
-    h1, h2, h3 {
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-bright-gray);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
       font-family: 'Cinzel', serif;
     }
 
-    /* Header & Navigation */
+    /* HEADER - LEFT ALIGNED FLOW */
     header {
-      background-color: var(--primary-dark);
+      background-color: var(--bg-white);
+      border-bottom: 3px solid var(--primary-gold);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      padding: 0.8rem 3%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
     }
 
-    nav {
-      max-width: 1200px;
+    .top-bar {
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 2rem;
+      justify-content: flex-start;
+      gap: 30px;
     }
 
-    .logo {
-      color: var(--white);
-      font-size: 1.6rem;
-      font-weight: 800;
-      text-decoration: none;
+    .brand-container {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      letter-spacing: 0.5px;
+      gap: 12px;
+      flex-shrink: 0;
     }
 
-    .logo img {
-      height: 45px;
+    .logo-img {
+      height: 52px;
       width: auto;
-      border-radius: 4px;
-      background-color: var(--white);
-      padding: 2px;
     }
 
-    .nav-links {
+    .brand-titles h1 {
+      font-size: 1.3rem;
+      color: var(--navy-dark);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .brand-titles p {
+      font-size: 0.78rem;
+      color: var(--primary-gold);
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    /* NAV LINKS ON THE LEFT SIDE */
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
       display: flex;
       list-style: none;
-      gap: 1.5rem;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    .nav-links a {
-      color: var(--white);
+    nav a {
+      color: var(--navy-dark);
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
+    nav a:hover {
+      color: var(--primary-gold);
+      background-color: var(--gold-light);
     }
 
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
-                  url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
-      color: var(--white);
-      text-align: center;
-      padding: 7rem 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: #fef08a;
-      letter-spacing: 1px;
-    }
-
-    .hero .tagline {
-      font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
-      color: var(--accent-light);
-      letter-spacing: 1px;
-      margin-bottom: 2.2rem;
-      font-weight: 600;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: var(--accent);
-      color: var(--white);
-      padding: 0.9rem 2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #b45309;
-    }
-
-    /* Layout Containers */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.4rem;
-      color: var(--primary-dark);
-      margin-bottom: 2.5rem;
+    /* HERO BANNER - GREY OVERLAY REMOVED FOR BRIGHT CHURCH IMAGE */
+    .hero-banner {
       position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: var(--accent);
-      margin: 0.5rem auto 0;
-    }
-
-    /* LIVE SECTION STYLES */
-    .live-section {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: var(--white);
-      padding: 4rem 1.5rem;
-      border-top: 4px solid var(--live-red);
-    }
-
-    .live-badge-container {
+      background: url('church banner_2.jpg') center/cover no-repeat;
+      min-height: 52vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;
-      margin-bottom: 0.8rem;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: white;
     }
 
-    .live-dot {
-      width: 12px;
-      height: 12px;
-      background-color: var(--live-red);
-      border-radius: 50%;
+    .hero-content h2 {
+      font-size: 3rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-tagline {
       display: inline-block;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
-    }
-
-    .live-title {
-      color: var(--white);
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .live-subtitle {
-      text-align: center;
-      color: #94a3b8;
-      margin-bottom: 2rem;
-      font-size: 1.05rem;
-    }
-
-    .live-player-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #000;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-      border: 1px solid #334155;
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      height: 0;
-      overflow: hidden;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .live-footer-note {
-      text-align: center;
-      margin-top: 1.5rem;
-      color: #cbd5e1;
-      font-size: 0.95rem;
-    }
-
-    .live-footer-note a {
-      color: #fef08a;
-      text-decoration: underline;
-    }
-
-    /* Section 1: About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    .about-img img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-      margin-bottom: 1.5rem;
-    }
-
-    .about-content p {
-      margin-bottom: 1.2rem;
-      text-align: justify;
-    }
-
-    .scripture-quote {
-      background-color: var(--accent-light);
-      border-left: 4px solid var(--accent);
-      padding: 1.2rem;
-      margin: 1.5rem 0;
-      font-family: 'Cinzel', serif;
-      font-weight: 600;
-      color: var(--primary-dark);
-      font-size: 1.05rem;
-    }
-
-    /* Section 2: Services */
-    .services-bg {
-      background-color: #f1f5f9;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .service-card {
-      background: var(--white);
-      padding: 1.8rem;
-      border-radius: 8px;
-      border-top: 4px solid var(--primary);
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .service-card h3 {
-      color: var(--primary-dark);
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
-
-    .service-card .time {
-      color: var(--accent);
+      background: rgba(15, 23, 42, 0.65);
+      border: 2px solid var(--primary-gold);
+      color: #ffffff;
+      padding: 0.8rem 2.2rem;
+      border-radius: 50px;
+      font-size: 1.15rem;
       font-weight: 700;
-      margin-top: 0.5rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
 
-    /* Section: YouTube Videos / Songs */
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .media-card {
-      background: var(--white);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      border: 1px solid #e2e8f0;
-    }
-
-    .media-info {
-      padding: 1.2rem;
-    }
-
-    .media-info h3 {
-      font-size: 1.1rem;
-      color: var(--primary-dark);
-      margin-bottom: 0.4rem;
-    }
-
-    .media-info p {
-      font-size: 0.9rem;
-      color: #64748b;
-    }
-
-    /* Section 3: Prayer Request Chat */
-    .chat-wrapper {
-      max-width: 650px;
+    /* SECTION CONTAINERS */
+    .section-container {
+      max-width: 1200px;
       margin: 0 auto;
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
-      overflow: hidden;
-      border: 1px solid #e2e8f0;
+      padding: 3.5rem 1.5rem;
     }
 
-    .chat-header {
-      background: var(--primary);
-      color: var(--white);
-      padding: 1.2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .whatsapp-btn {
-      background-color: var(--whatsapp);
-      color: var(--white);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .chat-box {
-      height: 320px;
-      padding: 1.2rem;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      background-color: #f8fafc;
-    }
-
-    .message {
-      max-width: 80%;
-      padding: 0.8rem 1rem;
-      border-radius: 12px;
-      font-size: 0.95rem;
-    }
-
-    .message.system {
-      background: #e2e8f0;
-      color: var(--text);
-      align-self: flex-start;
-      border-bottom-left-radius: 2px;
-    }
-
-    .message.user {
-      background: var(--primary);
-      color: var(--white);
-      align-self: flex-end;
-      border-bottom-right-radius: 2px;
-    }
-
-    .chat-input-area {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 1rem;
-      border-top: 1px solid #e2e8f0;
-      background: var(--white);
-    }
-
-    .chat-input-area input, .chat-input-area textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      font-family: inherit;
-    }
-
-    .chat-input-area button {
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-      padding: 0.75rem;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .chat-input-area button:hover {
-      background: #b45309;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--primary-dark);
-      color: #94a3b8;
-      padding: 3rem 1.5rem 1.5rem;
+    .section-header {
       text-align: center;
+      margin-bottom: 2.2rem;
     }
 
-    .footer-content {
-      max-width: 1100px;
-      margin: 0 auto;
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--navy-dark);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 3px;
+      background: var(--primary-gold);
+    }
+
+    /* SIDE-BY-SIDE GRID FOR VISION & MISSION */
+    .vision-mission-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      text-align: left;
-      margin-bottom: 2rem;
     }
 
-    .footer-col h4 {
-      color: var(--white);
-      font-size: 1.2rem;
+    /* BRIGHTER TILE CARDS */
+    .tile-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 2.2rem;
+      box-shadow: var(--card-shadow);
+      border-top: 4px solid var(--primary-navy);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .tile-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+      border-top-color: var(--primary-gold);
+    }
+
+    .tile-icon {
+      font-size: 2rem;
+      color: var(--primary-gold);
       margin-bottom: 1rem;
     }
 
-    .footer-col a {
-      color: #94a3b8;
-      text-decoration: none;
-      display: block;
+    /* ABOUT TEXT */
+    .about-text p {
+      color: var(--text-dark);
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+
+    .about-subhead {
+      color: var(--primary-navy);
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 2px solid var(--bg-bright-gray);
+      padding-bottom: 5px;
+    }
+
+    /* INTERACTIVE CALENDAR CONTAINER (SUNDAY, THURSDAY, FRIDAY, SATURDAY) */
+    .schedule-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .worship-img-box img {
+      width: 100%;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      object-fit: cover;
+    }
+
+    .calendar-container {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+
+    .calendar-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--navy-dark);
+      border-bottom: 3px solid var(--primary-gold);
+    }
+
+    .day-tab {
+      padding: 1.2rem 0.5rem;
+      text-align: center;
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .day-tab:last-child {
+      border-right: none;
+    }
+
+    .day-tab:hover {
+      background: rgba(217, 119, 6, 0.3);
+    }
+
+    .day-tab.active {
+      background: var(--primary-gold);
+      color: var(--navy-dark);
+    }
+
+    .calendar-display {
+      padding: 2.5rem 2rem;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--bg-white);
+    }
+
+    .service-card-active {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .service-card-active h3 {
+      font-size: 1.4rem;
+      color: var(--navy-dark);
       margin-bottom: 0.5rem;
     }
 
-    .footer-col a:hover {
-      color: var(--accent);
+    .service-time-badge {
+      display: inline-block;
+      background: var(--gold-light);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      font-weight: 800;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
     }
 
-    .footer-bottom {
-      border-top: 1px solid #334155;
-      padding-top: 1.5rem;
-      font-size: 0.9rem;
+    /* SEPARATED MEDIA TILES */
+    .media-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
     }
 
-    @media (max-width: 768px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .hero h1 { font-size: 2.2rem; }
-      .hero .tagline { font-size: 1.1rem; }
-      .logo { font-size: 1.2rem; }
+    .media-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .media-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    }
+
+    .media-card iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+    }
+
+    .media-card-body {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .media-card-body h4 {
+      font-size: 1.05rem;
+      color: var(--navy-dark);
+      margin-bottom: 1rem;
+    }
+
+    .btn-yt {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #cc181e;
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      align-self: flex-start;
+      transition: opacity 0.2s;
+    }
+
+    .btn-yt:hover {
+      opacity: 0.9;
+    }
+
+    /* PRAYER REQUESTS */
+    .prayer-card {
+      background: var(--bg-white);
+      border: 2px solid var(--primary-gold);
+      border-radius: var(--card-radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: var(--card-shadow);
+    }
+
+    .prayer-card textarea {
+      width: 100%;
+      height: 120px;
+      background: var(--bg-bright-gray);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+      color: var(--text-dark);
+      font-family: inherit;
+      resize: none;
+      margin: 1.5rem 0;
+      font-size: 1rem;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--whatsapp-green);
+      color: #ffffff;
+      border: none;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER & HYPERLINKS ONLY */
+    footer {
+      background-color: var(--navy-dark);
+      color: white;
+      padding: 4rem 1.5rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .footer-col h4 {
+      color: var(--primary-gold);
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-col p {
+      color: #e2e8f0;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      margin-top: 8px;
+      transition: all 0.2s;
+    }
+
+    .footer-link-btn:hover {
+      background: var(--primary-gold);
+      color: var(--navy-dark);
+      border-color: var(--primary-gold);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 992px) {
+      .top-bar { flex-direction: column; align-items: flex-start; gap: 15px; }
+      .schedule-layout-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- HEADER NAVBAR (FLOW ON LEFT BESIDE CHURCH NAME) -->
   <header>
-    <nav>
-      <a href="#" class="logo">
-        <img src="Logo.png" alt="Apostolic Prayer Tower Logo">
-        Apostolic Prayer Tower
-      </a>
-      <ul class="nav-links">
-        <li><a href="#live">Live Broadcast</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#media">Worship & Videos</a></li>
-        <li><a href="#prayer">Prayer Requests</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="top-bar">
+      <div class="brand-container">
+        <img src="Logo_3.png" alt="Apostolic Prayer Tower Logo" class="logo-img">
+        <div class="brand-titles">
+          <h1>APOSTOLIC PRAYER TOWER</h1>
+          <p>“Prayer our foundation, souls our mission, Christ our vision.”</p>
+        </div>
+      </div>
+      
+      <!-- NAV LINKS ON THE LEFT -->
+      <nav>
+        <ul>
+          <li><a href="#vision-mission">Vision & Mission</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#songs">Songs</a></li>
+          <li><a href="#shorts">Shorts</a></li>
+          <li><a href="#live">Live Service</a></li>
+          <li><a href="#prayer">Prayer Request</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Apostolic Prayer Tower</h1>
-    <div class="tagline">“Prayer our foundation, souls our mission, Christ our vision.”</div>
-    <a href="#live" class="btn">🔴 Watch Live Broadcast</a>
+  <!-- MAIN HERO BANNER (USING YOUR DIRECT CHURCH BANNER IMAGE) -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h2>APOSTOLIC PRAYER TOWER</h2>
+      <div class="hero-tagline">
+        “Prayer our foundation, souls our mission, Christ our vision.”
+      </div>
+    </div>
   </section>
 
-  <!-- DYNAMIC LIVE YOUTUBE SECTION -->
-  <section id="live" class="live-section">
-    <div class="live-badge-container">
-      <span class="live-dot"></span>
-      <span style="font-weight: 700; color: #f87171; letter-spacing: 1px; font-size: 0.9rem;">YOUTUBE LIVE DESK</span>
+  <!-- SIDE-BY-SIDE VISION & MISSION TILES -->
+  <section id="vision-mission" class="section-container">
+    <div class="vision-mission-grid">
+      
+      <!-- Vision Tile -->
+      <div class="tile-card">
+        <div class="tile-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3 style="color: var(--navy-dark); font-size: 1.4rem; margin-bottom: 0.8rem;">Vision Statement</h3>
+        <p style="font-size: 1.02rem; color: var(--text-dark);">
+          To establish Christ-centered communities across the nations, where churches become living sanctuaries of worship, fellowship, and service. Each community will embody the love of Christ through prayer, education, care for the orphaned and aged, healing through hospitals, equipping through Bible colleges and seminaries, and hospitality through pilgrimage homes. Our vision is to prepare generations in the Word, nurture them spiritually, and lead multitudes to Christ as we prepare the way for the Lord.
+        </p>
+      </div>
+
+      <!-- Mission Tile -->
+      <div class="tile-card">
+        <div class="tile-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3 style="color: var(--navy-dark); font-size: 1.4rem; margin-bottom: 0.8rem;">Mission Statement</h3>
+        <p style="font-size: 1.02rem; color: var(--text-dark);">
+          Our mission is to build and multiply community churches that reveal Christ’s love in action. Through integrated spaces of worship, pastoral care, dining fellowship, schools, hospitals, orphanages, homes for the aged, and training centers for discipleship, we seek to lead souls to salvation, equip believers in Scripture, strengthen families, and serve humanity with compassion. Apostolic Prayer Tower is committed to raising spiritually mature generations who will glorify God and carry forward the Great Commission until His return.
+        </p>
+      </div>
+
     </div>
-    <h2 class="live-title">Live Worship & Prayer Stream</h2>
-    <p class="live-subtitle">Join our ongoing live service or watch our most recent worship stream below</p>
+  </section>
+
+  <!-- ABOUT THE CHURCH -->
+  <section id="about" class="section-container" style="padding-top: 0;">
+    <div class="section-header">
+      <h2>About Apostolic Prayer Tower</h2>
+    </div>
+    <div class="tile-card about-text">
+      <h3 class="about-subhead">Foundational Years</h3>
+      <p>Apostolic Prayer Tower was founded on June 3, 2003, through the divine vision entrusted to our revered founder, <strong>Late Rev. Ramanadula Azariah Prabhakar Garu</strong>. With a heart burdened for the unreached, he stepped out in faith to proclaim the Gospel in the suburbs of Hyderabad, focusing especially on Jodimetla, Pillaipalli, Pedaamberpet, Yadigirigutta, Chikatmammidi, Bhongiri, Pocharam, and Singapore Township.</p>
+      <p>The ministry began with one faithful family, serving those from humble and struggling backgrounds. Despite intense opposition and spiritual resistance, the church stood firm, relying solely on God’s abundant grace and miraculous guidance. Through fervent prayer and steadfast faith, the congregation grew steadily, blossoming into a fellowship of 25 committed families, each a living testimony of God’s transforming power. Apostolic Prayer Tower became a spiritual refuge, a place of healing, restoration, and empowerment, with prayer as its heartbeat and every breakthrough attributed to the Lord’s hand at work.</p>
+
+      <h3 class="about-subhead">Transition Years</h3>
+      <p>On June 30, 2017, our beloved founder was called home to be with the Lord. His passing was a moment of deep sorrow, yet his vision and legacy continued to shine brightly. With faith and courage, <strong>Bishopamma Mrs. Maddela Kalavathy Prabhakar</strong> stepped into leadership, ensuring that the mission did not falter.</p>
+      <p>Alongside her, their son, <strong>Rev. Ramanadula Abhishek Preetham</strong>, who was anointed in 2015 for ministry, took active charge of the church. Together, Bishopamma Mrs. Maddela Kalavathy Prabhakar and Rev. Ramanadula Abhishek Preetham have strengthened the ministry, expanding its reach while remaining faithful to its founding vision: to build lives through prayer and proclaim Christ’s unchanging love.</p>
+
+      <h3 class="about-subhead">Today</h3>
+      <p>Apostolic Prayer Tower stands as a living testimony of God’s faithfulness. From humble beginnings to a thriving ministry, it continues to shine as a beacon of hope in the community, proclaiming the Gospel, discipling believers, and raising generations rooted in prayer. The legacy of Late Rev. Ramanadula Azariah Prabhakar Garu lives on through the leadership of Bishopamma Mrs. Maddela Kalavathy Prabhakar and Rev. Ramanadula Abhishek Preetham, as the church presses forward with renewed vision to reach the unreached and glorify Christ.</p>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CALENDAR SCHEDULE -->
+  <section id="schedule" class="section-container" style="padding-top: 0;">
+    <div class="section-header">
+      <h2>Church Schedule</h2>
+    </div>
     
-    <div class="live-player-wrapper">
-      <div class="video-container">
-        <!-- Live Stream Embed: Automatically displays current live stream or latest broadcast -->
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UC8293_apostolicprayertower" 
-          title="Apostolic Prayer Tower Live Broadcast" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+    <div class="schedule-layout-grid">
+      <div class="worship-img-box">
+        <img src="Church worship_2.jpeg" alt="Apostolic Prayer Tower Worship">
       </div>
-    </div>
-    <p class="live-footer-note">
-      If live stream doesn't auto-load, <a href="https://www.youtube.com/@apostolicprayertower8293/live" target="_blank">click here to open live directly on YouTube</a>.
-    </p>
-  </section>
 
-  <!-- 1. About Section -->
-  <section id="about" class="container">
-    <h2 class="section-title">About Our Church</h2>
-    <div class="about-grid">
-      <div class="about-content">
-        <p>
-          <strong>Apostolic Prayer Tower</strong> was founded on <strong>June 3, 2003</strong>, through the divine vision entrusted to our revered founder, <strong>Late Rev. Ramanaduala Azariah Prabhakar Garu</strong>. With a heart deeply burdened for the unreached, he stepped out in faith to proclaim the Gospel in the suburbs of Hyderabad, focusing especially on the regions of <strong>Jodimetla, Chowdariguda, and Ghatkesar</strong>. His mission was clear: to reach souls who had not yet heard the saving message of Christ and to establish a prayer-centered community.
-        </p>
-        <p>
-          In its earliest days, the ministry began with one faithful family, serving those from humble and struggling backgrounds. The journey was marked by intense opposition, criticism, and spiritual resistance, yet the church stood firm, relying solely on God’s abundant grace and miraculous guidance. Through fervent prayer and steadfast faith, the congregation grew steadily, blossoming into a fellowship of 25 committed families, each a living testimony of God’s transforming power.
-        </p>
-        <p>
-          Over the years, Apostolic Prayer Tower became more than a congregation—it became a spiritual refuge, a place of healing, restoration, and empowerment. Prayer was the heartbeat of the ministry, and every breakthrough was attributed to the Lord’s hand at work.
-        </p>
-        <div class="scripture-quote">
-          “Not by might, nor by power, but by My Spirit, says the Lord” — Zechariah 4:6
+      <!-- FILTERED CALENDAR TILE -->
+      <div class="calendar-container">
+        <div class="calendar-tabs">
+          <div class="day-tab active" onclick="showSchedule('sun', this)">SUNDAY</div>
+          <div class="day-tab" onclick="showSchedule('thu', this)">THURSDAY</div>
+          <div class="day-tab" onclick="showSchedule('fri', this)">FRIDAY</div>
+          <div class="day-tab" onclick="showSchedule('sat', this)">SATURDAY</div>
         </div>
-        <p>
-          On <strong>June 30, 2017</strong>, our beloved founder and Bishop was called home to be with the Lord. His passing was a moment of deep sorrow, yet his vision and legacy continued to shine brightly. In faith and obedience, <strong>Bishopamma</strong> graciously assumed the mantle of leadership, ensuring that the mission did not falter.
-        </p>
-        <p>
-          Alongside her, their son, <strong>Rev. Ramanadula Abhishek Preetham</strong>—who was anointed in 2015 for ministry—stepped into active service, carrying forward the torch of prayer, evangelism, and pastoral care.
-        </p>
-        <p>
-          Today, Apostolic Prayer Tower stands as a living testimony of God’s faithfulness. From humble beginnings to a thriving ministry, it continues to shine as a beacon of hope in the community, proclaiming Christ’s unchanging love and building lives through prayer. The legacy of our founder lives on through the leadership of Bishopamma and Rev. Abhishek Preetham, as the church presses forward with renewed vision to reach the unreached and disciple believers for the glory of God.
-        </p>
-      </div>
-      <div class="about-img">
-        <img src="https://images.unsplash.com/photo-1548625361-181512415177?auto=format&fit=crop&q=80&w=800" alt="Church worship and gathering">
-        <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=800" alt="Prayer Tower fellowship">
-      </div>
-    </div>
-  </section>
 
-  <!-- 2. Services Section -->
-  <section id="services" class="services-bg">
-    <div class="container">
-      <h2 class="section-title">Weekly Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Sunday Service</h3>
-          <p>Telugu Worship Service</p>
-          <p class="time">10:30 AM</p>
-        </div>
-        <div class="service-card">
-          <h3>Sunday Youth</h3>
-          <p>Youth Meeting & Fellowship</p>
-          <p class="time">4:00 PM</p>
-        </div>
-        <div class="service-card">
-          <h3>Thursday</h3>
-          <p>Bible Study</p>
-          <p class="time">7:30 PM</p>
-        </div>
-        <div class="service-card">
-          <h3>Friday</h3>
-          <p>Fasting Prayer & Cottage Prayer</p>
-          <p class="time">7:30 PM</p>
-        </div>
-        <div class="service-card">
-          <h3>Saturday</h3>
-          <p>Supplication Prayer</p>
-          <p class="time">7:30 PM Onwards</p>
+        <div class="calendar-display" id="calendarDisplay">
+          <!-- Dynamic Calendar Content Injected via JavaScript -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. YouTube Worship & Latest Releases -->
-  <section id="media" class="container">
-    <h2 class="section-title">Worship Songs & Latest Releases</h2>
-    <div class="media-grid">
-
-      <!-- Video 1: Anthem Song -->
+  <!-- LATEST WORSHIP SONGS TILE -->
+  <section id="songs" class="section-container" style="padding-top: 0;">
+    <div class="section-header">
+      <h2>Latest Worship Songs</h2>
+    </div>
+    <div class="media-card-grid">
+      <!-- Song 1 -->
       <div class="media-card">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/JVRqaLmCcWg" title="Apostolic Prayer Tower Anthem Song" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="media-info">
-          <h3>Apostolic Prayer Tower – Anthem Song</h3>
-          <p>Official church anthem celebrating fellowship, prayer, and worship in Christ.</p>
+        <iframe src="https://www.youtube.com/embed/YprYTyn9ig4" title="Lords Prayer" allowfullscreen></iframe>
+        <div class="media-card-body">
+          <h4>Lord's Prayer</h4>
+          <a href="https://youtu.be/YprYTyn9ig4?si=zhKfo2dF5Ag2bJmW" target="_blank" class="btn-yt">
+            <i class="fa-brands fa-youtube"></i> Watch on YouTube
+          </a>
         </div>
       </div>
 
-      <!-- Video 2: The Lord's Prayer (Telugu) -->
+      <!-- Song 2 -->
       <div class="media-card">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/YprYTyn9ig4" title="The Lord’s Prayer (Telugu) – Eternal Worship" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="media-info">
-          <h3>The Lord’s Prayer (Telugu) – Eternal Worship</h3>
-          <p>Led by Rev. Ramanadula Abhishek Preetham – A heartfelt prayer of praise and worship.</p>
+        <iframe src="https://www.youtube.com/embed/JVRqaLmCcWg" title="Church Anthem" allowfullscreen></iframe>
+        <div class="media-card-body">
+          <h4>Church Anthem</h4>
+          <a href="https://youtu.be/JVRqaLmCcWg?si=CwOXU53pcQjR8-6c" target="_blank" class="btn-yt">
+            <i class="fa-brands fa-youtube"></i> Watch on YouTube
+          </a>
         </div>
       </div>
 
-      <!-- Video 3: Blessing -->
+      <!-- Song 3 -->
       <div class="media-card">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/4Nhft-bDBNY" title="Apostolic Prayer Tower | Blessing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="media-info">
-          <h3>Apostolic Prayer Tower | Blessing</h3>
-          <p>Divine blessings and prayers for families, neighbors, and grace in everyday life.</p>
+        <iframe src="https://www.youtube.com/embed/4Nhft-bDBNY" title="Blessing" allowfullscreen></iframe>
+        <div class="media-card-body">
+          <h4>Blessing</h4>
+          <a href="https://youtu.be/4Nhft-bDBNY?si=g95wPRs7QNJHoOOS" target="_blank" class="btn-yt">
+            <i class="fa-brands fa-youtube"></i> Watch on YouTube
+          </a>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- 4. Prayer Requests / Chat Section -->
-  <section id="prayer" class="container">
-    <h2 class="section-title">Prayer Requests</h2>
-    <div class="chat-wrapper">
-      <div class="chat-header">
-        <div>
-          <h3>Live Prayer Desk</h3>
-          <small>Share your prayer request with our prayer warriors</small>
+  <!-- SEPARATE TILE FOR YOUTUBE SHORTS -->
+  <section id="shorts" class="section-container" style="padding-top: 0;">
+    <div class="section-header">
+      <h2>Worship Shorts</h2>
+    </div>
+    <div style="max-width: 450px; margin: 0 auto;">
+      <div class="media-card">
+        <iframe src="https://www.youtube.com/embed/LiE8ZPRLs1Q" style="height: 380px;" title="YouTube Shorts" allowfullscreen></iframe>
+        <div class="media-card-body">
+          <h4>Apostolic Prayer Tower Shorts</h4>
+          <a href="https://www.youtube.com/shorts/LiE8ZPRLs1Q" target="_blank" class="btn-yt">
+            <i class="fa-brands fa-youtube"></i> Watch Short on YouTube
+          </a>
         </div>
-        <a href="https://wa.me/918977009542" target="_blank" class="whatsapp-btn">💬 WhatsApp Us</a>
       </div>
-      <div class="chat-box" id="chatBox">
-        <div class="message system">
-          Praise the Lord! How can we pray for you and your family today? Please submit your name and prayer request below.
-        </div>
-      </div>
-      <form class="chat-input-area" id="prayerForm" onsubmit="handleSend(event)">
-        <input type="text" id="userName" placeholder="Your Name" required>
-        <textarea id="userMessage" rows="2" placeholder="Write your prayer request here..." required></textarea>
-        <button type="submit">Submit Prayer Request</button>
-      </form>
     </div>
   </section>
 
-  <!-- Footer / Contact -->
-  <footer id="contact">
-    <div class="footer-content">
-      <div class="footer-col">
-        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
-          <img src="Logo.png" alt="Apostolic Prayer Tower Logo" style="height: 38px; width: auto; background: white; padding: 2px; border-radius: 4px;">
-          <h4 style="margin-bottom: 0;">Apostolic Prayer Tower</h4>
+  <!-- LATEST LIVE SERVICES -->
+  <section id="live" class="section-container" style="padding-top: 0;">
+    <div class="section-header">
+      <h2>Latest Live Services</h2>
+    </div>
+    <div style="max-width: 850px; margin: 0 auto;">
+      <div class="media-card">
+        <iframe src="https://www.youtube.com/embed/kmTd_pFPE6s" style="height: 380px;" title="Latest Church Live Service" allowfullscreen></iframe>
+        <div class="media-card-body">
+          <h4>Latest Worship Broadcast</h4>
+          <a href="https://www.youtube.com/live/kmTd_pFPE6s?si=j50fsofcQZoe-pYj" target="_blank" class="btn-yt">
+            <i class="fa-brands fa-youtube"></i> Watch Live on YouTube
+          </a>
         </div>
-        <p><em>“Prayer our foundation, souls our mission, Christ our vision.”</em></p>
-        <p style="margin-top: 0.8rem; font-size: 0.95rem; line-height: 1.5;">
-          <strong>Address:</strong><br>
-          Apostolic Prayer Tower,<br>
-          Swarnagiri Colony, Chowdariguda,<br>
-          Jodimetla, Medchal (D),<br>
-          Hyderabad, Telangana – 500088
-        </p>
-      </div>
-      <div class="footer-col">
-        <h4>Contact & Connect</h4>
-        <p>Phone: <a href="tel:+918977009542">+91 8977009542</a></p>
-        <p>Email: <a href="mailto:apostolicprayertower@gmail.com">apostolicprayertower@gmail.com</a></p>
-        <a href="https://maps.app.goo.gl/EfhLGbp6VhwdYfY8A" target="_blank" style="margin-top: 0.5rem; display: inline-block;">📍 Get Google Maps Directions</a>
-      </div>
-      <div class="footer-col">
-        <h4>Social Media Links</h4>
-        <a href="https://www.facebook.com/APT4CHRIST" target="_blank">Facebook Page</a>
-        <a href="https://www.youtube.com/@apostolicprayertower8293" target="_blank">YouTube Channel</a>
-        <a href="https://www.youtube.com/@apostolicprayertower8293/live" target="_blank" style="color: #f87171; font-weight: 600; margin-top: 0.4rem;">🔴 Live Stream Direct Link</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2026 Apostolic Prayer Tower. All rights reserved.
+  </section>
+
+  <!-- PRAYER REQUESTS -->
+  <section id="prayer" class="section-container" style="padding-top: 0;">
+    <div class="section-header">
+      <h2>Prayer Requests</h2>
+    </div>
+    <div class="prayer-card">
+      <h3 style="color: var(--navy-dark);"><i class="fa-solid fa-hands-praying" style="color: var(--primary-gold);"></i> Send Us Your Prayer Request</h3>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Enter your prayer request below to message our prayer team directly on WhatsApp.</p>
+      
+      <textarea id="prayerInput" placeholder="Type your prayer request here..."></textarea>
+      
+      <br>
+      <button onclick="sendPrayerWhatsApp()" class="btn-whatsapp">
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Send Directly via WhatsApp
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      
+      <!-- Address & Directions Link -->
+      <div class="footer-col">
+        <h4>Church Address</h4>
+        <p><strong>Apostolic Prayer Tower</strong></p>
+        <p>Swarnagiri Colony, Chowdariguda,</p>
+        <p>Jodimetla, Medchal (D),</p>
+        <p>Hyderabad, Telangana – 500088</p>
+        
+        <a href="https://maps.app.goo.gl/i9siQm486cFBre9X6" target="_blank" class="footer-link-btn">
+          <i class="fa-solid fa-location-dot" style="color: #ea4335;"></i> Google Maps
+        </a>
+      </div>
+
+      <!-- Contact & Social Media Hyperlinks -->
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <p><strong>Phone / WhatsApp:</strong> +91 8977009542</p>
+        <p><strong>Email:</strong> apostolicprayertower@gmail.com</p>
+        
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+          <!-- Facebook Hyperlink -->
+          <a href="https://www.facebook.com/APT4CHRIST" target="_blank" class="footer-link-btn">
+            <i class="fa-brands fa-facebook-f" style="color: var(--facebook-blue);"></i> Facebook
+          </a>
+
+          <!-- YouTube Hyperlink -->
+          <a href="https://www.youtube.com/@apostolicprayertower8293" target="_blank" class="footer-link-btn">
+            <i class="fa-brands fa-youtube" style="color: #cc181e;"></i> YouTube
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Broadcast Hyperlink -->
+      <div class="footer-col">
+        <h4>Live Stream</h4>
+        <p>Watch our weekly services live online:</p>
+        <a href="https://www.youtube.com/live/kmTd_pFPE6s?si=j50fsofcQZoe-pYj" target="_blank" class="footer-link-btn">
+          <i class="fa-solid fa-tower-broadcast" style="color: #cc181e;"></i> Watch Live Service
+        </a>
+      </div>
+
+    </div>
+
+    <!-- COPYRIGHT UPDATED TO 2026 -->
+    <div class="copyright">
+      &copy; 2026 Apostolic Prayer Tower. All Rights Reserved.
     </div>
   </footer>
 
+  <!-- SCRIPT FOR CALENDAR INTERACTION & WHATSAPP -->
   <script>
-    function handleSend(e) {
-      e.preventDefault();
-      const nameInput = document.getElementById('userName');
-      const msgInput = document.getElementById('userMessage');
-      const chatBox = document.getElementById('chatBox');
+    const scheduleData = {
+      sun: [
+        { title: "Telugu Worship Service", time: "10:30 AM – 1:00 PM" },
+        { title: "Youth Worship Service", time: "4:00 PM – 6:00 PM" }
+      ],
+      thu: [
+        { title: "Bible Study", time: "7:30 PM – 8:30 PM" }
+      ],
+      fri: [
+        { title: "Fasting and Cottage Prayers", time: "7:30 PM – 8:30 PM" }
+      ],
+      sat: [
+        { title: "Supplication Prayer", time: "7:30 PM – 9:30 PM" }
+      ]
+    };
 
-      const name = nameInput.value.trim();
-      const message = msgInput.value.trim();
+    function showSchedule(dayKey, element) {
+      document.querySelectorAll('.day-tab').forEach(tab => tab.classList.remove('active'));
+      element.classList.add('active');
 
-      if(name && message) {
-        // Append User Message
-        const userDiv = document.createElement('div');
-        userDiv.className = 'message user';
-        userDiv.innerHTML = `<strong>${name}:</strong> ${message}`;
-        chatBox.appendChild(userDiv);
+      const display = document.getElementById('calendarDisplay');
+      const events = scheduleData[dayKey];
 
-        // Auto-reply confirmation
-        setTimeout(() => {
-          const replyDiv = document.createElement('div');
-          replyDiv.className = 'message system';
-          replyDiv.innerHTML = `Thank you, brother/sister ${name}. Your prayer request has been received. Our prayer team will lift this up in supplication. God bless you!`;
-          chatBox.appendChild(replyDiv);
-          chatBox.scrollTop = chatBox.scrollHeight;
-        }, 800);
+      let html = '<div class="service-card-active">';
+      events.forEach(evt => {
+        html += `
+          <h3>${evt.title}</h3>
+          <span class="service-time-badge"><i class="fa-regular fa-clock"></i> ${evt.time}</span>
+          <div style="margin-bottom: 15px;"></div>
+        `;
+      });
+      html += '</div>';
 
-        msgInput.value = '';
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
+      display.innerHTML = html;
+    }
+
+    // Initialize Default Calendar Day (Sunday)
+    document.addEventListener("DOMContentLoaded", function() {
+      showSchedule('sun', document.querySelector('.day-tab.active'));
+    });
+
+    // WhatsApp Direct Sender
+    function sendPrayerWhatsApp() {
+      const phone = "918977009542";
+      const messageText = document.getElementById("prayerInput").value;
+      const formattedMessage = encodeURIComponent("Peace be unto you Apostolic Prayer Tower,\n\nHere is my prayer request:\n" + messageText);
+      window.open(`https://wa.me/${phone}?text=${formattedMessage}`, '_blank');
     }
   </script>
 </body>
